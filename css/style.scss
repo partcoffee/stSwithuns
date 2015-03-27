@@ -4,26 +4,21 @@
 
 
 /* Fonts */
-$primary: 'Source Sans Pro', sans-serif;
-$secondary: 'Source Sans Pro', sans-serif;
+$primary: 'Times', serif;
+$secondary: 'Times', serif;
+$sans: 'Source Sans Pro', sans-serif;
 
 
 /* Colours */
-$black: #394042;
-$main-color: #555;
-$highlight-color: #6b635b;
-$dark-grey: #394042;
+$main-color: #838383;
+$dark-grey: #565656;
+$highlight-color: #ac9558;
+$background: #fbfbfb;
+
+$brown: #6b6b6b;
 
 
 /* Other */
-@mixin vertical-align {
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
 @mixin animate($time) {
 	-webkit-transition: $time;
 	-moz-transition: $time;
@@ -32,17 +27,23 @@ $dark-grey: #394042;
 }
 
 
+/* Variables */
+$hard-width: 1400px;
+$soft-width: 910px;
+
+$sections: white $brown white $brown white $brown;
+$sec-col: $dark-grey white $dark-grey white $dark-grey white;
+
+/* Background image for history */
+$bck: url('../img/01.jpg')
+			url('../img/02.jpg')
+			url('../img/03.jpg');
+
+
 /* Import */
 /* @import 'grid'; */
 /* @import 'retina'; */
 
-$max: 1400px;
-
-$bck: url('../img/09.jpg')
-			url('../img/06.jpg')
-			url('../img/10.jpg');
-
-$colours: #6a635a #323333 #ac9558;
 
 
 
@@ -53,29 +54,18 @@ $colours: #6a635a #323333 #ac9558;
 
 html, body {
 	font-size: 100%;
-	width: 100%;
-	height: 100%;
 	padding: 0;
 	margin: 0;
 	vertical-align: baseline;
 }
 
 body {
-	background: #eee;
+	background: #eeeeee;
+	color: $main-color;
 	-webkit-text-size-adjust: 100%; /* Because iPhones are dumb sometimes. */
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-.wrap {
-	background-color: #fbfbfb;
-	box-shadow: 2px 4px 14px rgba(0,0,0,0.05);
-	margin: 0 auto;
-	max-width: $max;
-	min-height: 100%;
-	position: relative;
-	width: 100%;
 }
 
 *, *:after, *:before {
@@ -94,6 +84,16 @@ ul, li {
 	list-style-type: none;
 }
 
+.wrap {
+	background-color: $background;
+	box-shadow: 2px 4px 14px rgba(0,0,0,0.05);
+	margin: 0 auto;
+	max-width: $hard-width;
+	min-height: 100%;
+	position: relative;
+	width: 100%;
+}
+
 
 
 
@@ -102,41 +102,66 @@ ul, li {
     #Main_Style
 \*------------------------------------*/
 
-header {
-	background: $black url('../img/01.jpg') no-repeat center;
-	background-size: cover;
-	padding: 220px 0;
+nav {
+	position: absolute;
+	width: 100%;
+}
 
-	h1 {
-		color: #222;
+.navbar {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 30px 0 0;
+	text-align: center;
+
+	a {
+		color: #FFF;
+		font: 700 11px/1 $sans;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		padding: 0 12px;
+	}
+}
+
+header {
+	background: url('../img/cover.jpg') center no-repeat;
+	background-size: cover;
+	text-align: center;
+
+	ul {
+		padding-bottom: 40px;
+	}
+}
+
+.title {
+	width: 720px;
+	padding: 270px 0 190px;
+}
+
+section {
+	padding: 120px 0;
+}
+
+.mid {
+	h1, h2, p {
 		text-align: center;
 	}
 }
 
-nav {
-	background: #FFF;
-	box-shadow: 2px 4px 14px rgba(0,0,0,0.05);
-	padding: 13px 0;
-	text-align: right;
-	width: 100%;
-  z-index: 999;
-
-  .navbar {
-  	margin: 0 auto;
-  	max-width: 1000px;
-  }
-
-  a {
-  	padding: 8px;
-  }
-}
-
 footer {
-	background: $highlight-color;
-	color: #FFF;
+	background: url('../img/cover.jpg') no-repeat center;
+	background-size: cover;
 	font: 400 14px/1.8 $secondary;
 	padding: 20px 0;
 	text-align: center;
+	width: 100%;
+
+	p {
+		color: rgba(white, 0.4);
+		font-family: $sans;
+		font-size: 12px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
 }
 
 
@@ -147,95 +172,78 @@ footer {
     #Element_Style
 \*------------------------------------*/
 
-nav {
-	background: #FFF;
-	box-shadow: 2px 4px 14px rgba(0,0,0,0.05);
-	padding: 13px 0;
-	text-align: right;
+.logo {
+	display: none;
+}
+
+h1, h2, p {
+	margin: auto;
+	max-width: ($soft-width * 0.6);
+	padding: 0 30px;
 	width: 100%;
-  z-index: 999;
-
-  .navbar {
-  	margin: 0 auto;
-  	max-width: 1000px;
-  }
-
-  a {
-  	padding: 8px;
-  }
-}
-
-.statement {
-	background: $highlight-color;
-	padding: 80px 30px;
-	width: 100%;
-
-	h1, p {
-		color: #FFF;
-		margin: 0 auto;
-		max-width: 1000px;
-	}
-
-	h1 {
-		padding-bottom: 30px;
-	}
-}
-
-@for $i from 1 through length($colours) {
-	.container-#{$i} {
-		background-color: nth($colours, $i);
-	}
-}
-
-[class*='container-'] {
-
-	h1, p {
-		color: #FFF;
-	}
 }
 
 [class*='col-'] {
-	padding: 80px 30px;
-
-	h1 {
-		padding-bottom: 30px;
-	}
-
-	h1, p {
-		margin: 0 auto;
-		max-width: 360px;
+	h1, h2, p {
+		max-width: 420px;
 	}
 }
 
-.full {
-	margin: 0 auto;
-	max-width: 700px;
-	padding: 100px 30px;
-
-	h1, p:last-of-type {
-		text-align: center;
+@for $i from 1 through length($sections) {
+	section:nth-of-type(#{$i}) {
+		background-color: nth($sections, $i);
 	}
 }
 
-.image {
-	background: no-repeat url('../img/08.jpg');
-	background-color: $highlight-color;
+@for $i from 1 through length($sec-col) {
+	section:nth-of-type(#{$i}) {
+
+		h1, p {
+			color: nth($sec-col, $i);
+		}
+	}
+}
+
+[class*='img-'] {
+	background: no-repeat center;
 	background-size: cover;
-	padding: 120px 0;
-
-	h1 {
-		color: #FFF;
-		text-align: center;
-	}
+	width: 100%;
 }
 
 @for $i from 1 through length($bck) {
-	section:nth-of-type(#{$i}) .image-#{$i} {
-		background: no-repeat center nth($bck, $i);
-		background-size: cover;
-		padding: 0;
+	.img-#{$i} {
+		background-image: nth($bck, $i);
 	}
 }
+
+.words {
+	background: $highlight-color;
+	padding: 160px 0;
+	text-align: center;
+	width: 100%;
+
+	h1 {
+		color: #FFF;
+	}
+}
+
+.button {
+	border: 1px solid;
+	color: inherit;
+	display: inline-block;
+	margin: 10px 0 0;
+	padding: 6px 20px;
+}
+
+.list {
+	clear: both;
+	padding-top: 40px;
+
+	&:first-of-type {
+		padding-top: 0;
+	}
+}
+
 
 
 
@@ -244,38 +252,41 @@ nav {
     #Typography
 \*------------------------------------*/
 
-h1 {
-	color: $highlight-color;
-	font: 400 18px/1 $primary;
-	text-align: left;
-	text-transform: uppercase;
-
-	span:nth-of-type(1) {
-		font-size: 22px;
-	}
-
-	span:nth-of-type(2) {
-		font-size: 30px;
-		font-weight: 700;
-	}
+h1, h2 {
+	color: $dark-grey;
+	font-family: $secondary;
+	font-style: italic;
+	font-weight: 300;
+	text-transform: capitalize;
 }
 
-p, a {
-	color: $highlight-color;
-	font: 400 14px/1.8 $secondary;
+h1 {
+	font-size: 32px;
+	letter-spacing: 1px;
+}
+
+h2 {
+	color: $main-color;
+	font-size: 16px;
+	letter-spacing: 1px;
+	padding-bottom: 20px;
+}
+
+p {
+	color: $dark-grey;
+	font: 300 15.5px/1.8 $primary;
 }
 
 a {
+	@include animate(0.3s ease-out);
+	color: inherit;
+	font: 300 15px/1 $primary;
 	text-decoration: none;
-}
 
-.split {
-	border-bottom: 1px solid rgba(0,0,0,0.3);
-	margin: 50px auto;
-	max-width: 340px;
-	padding-bottom: 16px;
+	&:hover {
+		opacity: 0.5;
+	}
 }
-
 
 
 
@@ -285,7 +296,21 @@ a {
     #Responsive
 \*------------------------------------*/
 
-@media only screen and (min-width: 940px) {
+@media only screen and (min-width: 960px) {
+	.navbar {
+		padding: 30px 30px 0;
+		text-align: right;
+
+		a {
+			font-size: 12px;
+		}
+	}
+
+	.logo {
+		display: block;
+		float: left;
+	}
+
 	.grid {
 		overflow: hidden;
 		width: 100%;
@@ -293,36 +318,72 @@ a {
 		&:after {
 			content: "";
 			display: table;
-			clear: both;
+			clear: both; /* Otherwise it will collapse on itself */
 		}
 	}
 
 	[class*='col-'] {
+		padding: 120px 0;
 		width: 50%;
 
-		h1 {
-			text-align: center;
+		h1, h2, p {
+		  padding: 0;
+		}
+
+		h2 {
+			padding-bottom: 20px;
 		}
 	}
 
 	.col-R {
 		float: right;
+
+		h1, h2, p {
+			margin: 0 auto 0 0;
+		}
 	}
 
 	.col-L {
 		float: left;
+
+		h1, h2, p {
+			margin: 0 0 0 auto;
+		}
+	}
+
+	[class*='height-'] {
+		h1, h2, p {
+			margin: 0 auto;
+		}
+	}
+
+	.grid {
+		padding: 0;
+	}
+
+	h1, h2, p {
+		max-width: $soft-width;
 	}
 }
 
-@media only screen and (min-width: 640px) {
-	.split {
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-		column-count: 2;
-		-webkit-column-gap: 28px;
-		-moz-column-gap: 28px;
-		column-gap: 28px;
-		max-width: 640px;
+@media only screen and (min-width: 1400px) {
+	footer {
+		background: transparent;
+		position: absolute; /* Places the footer outside the main-content on larger monitors */
+
+		p {
+			color: $main-color;
+		}
+	}
+}
+
+@media only screen and (max-height: 600px) {
+	header {
+		padding: 200px 0 40px;
+
+		ul {
+			padding-top: 80px;
+		}
 	}
 }
 

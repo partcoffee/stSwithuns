@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+=====================================================
+www.domain.com
+=====================================================
+-->
+
+<head>
+<meta charset="UTF-8">
+<title>StMary's - Winchester</title>
+<meta name="description" content="Description">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="wrap animated fadeIn delay">
+
+<!--
+=====================================================
+  Section
+=====================================================
+-->
+
+<nav>
+	<div class="navbar">
+		<a href="/" class="logo">&#10013;</a>
+		<a href="/">Home</a>
+		<a href="#">Facebook</a>
+		<a id="scroll" href="#contact">Contact</a>
+	</div>
+</nav>
+
+<header>
+	<h1>Graphic goes here</h1>
+	<ul>
+		<li class="dots">.</li>
+		<li class="dots">.</li>
+		<li class="dots">.</li>
+	</ul>
+</header>
+
+<div class="main">
+
+	<section>
+		<h1>Activities</h1>
+		<h2>All ages</h2>
+		<p>Here at St. Mary's in Kings Worthy. We hold many activities for our congregation on a weekly basis. They cater to all ages from the young people within the community to the older people. We regularly hold a Holy Communion on Sunday's in addition to other events throughout the week. To view the full list of activities we do click here. In addition to this, we also hold a large number of clubs catered towards the younger people of the congregation such as Little Fishes, H2O and XStream. Each of these clubs cater to a different age as our congregation is so different.</p>
+	</section>
+	
+	<section class="grid">
+		<div class="list">
+			<div class="col-L">
+				<h1>XStream</h1>
+				<h2>Weekdays</h2>
+			</div>
+			<div class="col-R">
+				<p>XStream is our club for children in school years 1 to 6 with crafts, teaching and team games. It runs on the first Friday of each months from 5:45pm to 7:15pm in St. Mary's Chapel Hall.</p>
+			</div>
+		</div>
+
+		<div class="list">
+			<div class="col-L">
+				<h1>H20</h1>
+				<h2>Weekdays</h2>
+			</div>
+			<div class="col-R">
+				<p>H2O is our club for young people in school years 7 to 13. Activities include film nights, hot chocolate, marshmallow evening and pizza making. It runs on the first and third Friday each month from 7:30pm until 9:30pm.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="grid">
+		<div class="list">
+			<div class="col-L">
+				<h1>Little Fishes</h1>
+				<h2>Sunday Group</h2>
+			</div>
+			<div class="col-R">
+				<p>Little Fishes is our Bible-teaching group for children ages 3 to 7 featuring crafts, teaching and games. It runs on the second, third and fourth Sunday each month during the 10am service at St. Mary's Church.</p>
+			</div>
+		</div>
+		<div class="list">
+			<div class="col-L">
+				<h1>XSream Sunday</h1>
+				<h2>Sunday Group</h2>
+			</div>
+			<div class="col-R">
+				<p>XSream Sunday is our Bible-Teaching group for children ages 7 to 11 featuring crafts, teaching and games. It runs on the second, third and fourth Sunday each month during the 10am service at St. Mary's Church.</p>
+			</div>
+		</div>
+		<div class="list">
+			<div class="col-L">
+				<h1>H20 Sunday</h1>
+				<h2>Sunday Group</h2>
+			</div>
+			<div class="col-R">
+				<p>H2O Sunday is our Bible-teaching group for young people ages 11 to 18. It runs on the second, third and fourth Sunday each month during the 10am service at St. Mary's Church.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="grid">
+		<div class="col-L">
+			<h1>Also..</h1>
+			<h2>By request</h2>
+		</div>
+		<div class="col-R">
+			<p>In addition to this, the church holds many other services such as weddings, funerals and christenings. These obviously are not fixed to the people within the community and we are open to all. If you want to have any of these take place at our church, please get in contact with our Reverend Alan Gordon whose details are are available on the site.</p>
+		</div>
+	</section>
+	
+	<section id="contact" class="mid">
+		<h1>Contact</h1>
+		<h2>&mdash;</h2>
+		<p>If you wish to contact the church to know more about booking a wedding, funeral or christening at the church. Please contact the Reverend Alan Gordon on his mobile on 01962 882167 or by email at <a href="mailto:rector@worthyparishes.org.uk">rector@worthyparishes.org.uk</a>.</p>
+		<p>
+			<br>
+			<a href="mailto:rector@worthyparishes.org.uk" class="button">Email</a>
+		</p>
+	</section>
+
+<footer>
+	<p>Copyright © 2015 &ndash; Group name</p>
+</footer>
+
+</div>
+</div>
+
+
+
+<!--
+=====================================================
+  Scripts
+=====================================================
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src='../js/fastclick.min.js'></script>
+
+<script>
+	$(function() {
+		FastClick.attach(document.body);
+	});
+
+	$(function() {
+	$('#scroll').click(function(e) {
+		e.preventDefault();
+			$('body, html').animate({
+				scrollTop: $($.attr(this, 'href')).offset().top -100
+			}, 750);
+		});
+	});
+
+	$(function() {
+		FastClick.attach(document.body);
+	});
+</script>
+
+</body>
+</html>

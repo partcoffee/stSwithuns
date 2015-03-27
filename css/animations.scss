@@ -80,3 +80,50 @@
 	-webkit-animation-delay: .3s;
 	animation-delay: .3s;
 }
+
+@for $i from 1 through 3 {
+	.dots:nth-of-type(#{$i}) {
+		-webkit-animation-delay: $i * 0.35s;
+		animation-delay: $i * 0.35s;
+	}
+}
+
+.dots {
+	color: #FFF;
+	font-size: 40px;
+	line-height: .5;
+
+	opacity: 0;
+	-webkit-animation: dot 2.5s 1.7s ease-in-out infinite;
+	-moz-animation: dot 2.5s 1.7s ease-in-out infinite;
+	-o-animation: dot 2.5s 1.7s ease-in-out infinite;
+	animation: dot 2.5s 1.7s ease-in-out infinite;
+}
+
+@-moz-keyframes dot {
+	50% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes dot {
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes dot {
+	50% {
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
