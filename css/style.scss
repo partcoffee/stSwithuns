@@ -134,10 +134,10 @@ header {
 
 .title {
 	width: 720px;
-	padding: 270px 0 190px;
+	padding: 200px 0 160px;
 }
 
-section {
+.text {
 	padding: 120px 0;
 }
 
@@ -378,8 +378,8 @@ a {
 }
 
 @media only screen and (max-height: 600px) {
-	header {
-		padding: 200px 0 40px;
+	.title {
+		padding: 200px 0 120px;
 
 		ul {
 			padding-top: 80px;
